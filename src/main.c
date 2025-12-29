@@ -190,6 +190,8 @@ i32 main(const i32 argc, const char* argv[]) {
     .tiles  = 100
   };
 
+  platform_build_model(&camera, &platform);
+
   bool running = true;
   SDL_Event event;
 
@@ -204,8 +206,6 @@ i32 main(const i32 argc, const char* argv[]) {
     dt += 0.016f;
     if (dt >= 720.f)
       dt = 0;
-
-    platform_render(window, &camera, &platform, unit_vector, origin);
 
     graphics_clipper(camera, models, s_models);
 
